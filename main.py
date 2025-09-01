@@ -1,22 +1,19 @@
 from turtle import Turtle, Screen
+import moveturtle as mt
 
 turtle = Turtle()
 screen = Screen()
 
-turtle.color("green")
-turtle.pencolor("black")
-turtle.shape("turtle")
 
-# timmy_the_turtle.listen()
-#
-# timmy_the_turtle.onkey(forward,"Up")
+
 turtle.speed(1)
-for i in range(4):
-    turtle.forward(100)
-    turtle.left(90)
 
-
-
-
+screen.listen()
+screen.onkey(mt.move_forward, "Up")
+screen.onkey(mt.move_backward, "Down")
+screen.onkey(mt.move_left, "Left")
+screen.onkey(mt.move_right, "Right")
+# set_pen_status = screen.onkey(pen_status(), "p")
+screen.onkey(mt.game_reset, "space")
 
 screen.exitonclick()
